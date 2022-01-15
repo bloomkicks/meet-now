@@ -1,0 +1,53 @@
+.add_meetup {
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75vw;
+  max-width: 400px;
+}
+
+.add_meetup > label {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 13px;
+  width: 100%;
+}
+
+.add_meetup input {
+  padding: 0.2em 0.6em;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: rgb(19, 105, 105);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: none;
+  margin: 3px 0 2px 0;
+}
+
+.add_meetup input:focus {
+  outline: 1px solid black;
+}
+
+.add_meetup small {
+  color: rgb(126, 41, 41)
+}
+
+.add_meetup button {
+  padding: 6px 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(19, 105, 105);
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+  align-self: flex-end;
+}
+
+.hidden {
+  opacity: 0.7;
+  pointer-events: none;
+}

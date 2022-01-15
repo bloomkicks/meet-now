@@ -1,0 +1,23 @@
+.meetup {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px black;
+  padding-bottom: 10px;
+}
+
+.meetup > * {
+  margin-bottom: 10px;
+}
+
+.meetup > img {
+  max-height: 500px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.meetup > h2 {
+  margin-bottom: 5px;
+  color: rgb(19, 105, 105);
+}
