@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useValidator from "../../hooks/use-validator";
 import classes from "./AddMeetup.module.css";
 
@@ -14,6 +14,8 @@ const descValidator = (value) => {
 };
 
 const AddMeetup = (props) => {
+  const addressRef = useRef()
+  const imageRef = useRef()
   const [isFormValid, setIsFormValid] = useState(false);
   const {
     error: titleError,
@@ -35,12 +37,32 @@ const AddMeetup = (props) => {
     "Description must contain at least 5 characters"
   );
 
-  const addMeetupHandler = (e) => {
+  const addMeetupHandler = async (e) => {
     e.preventDefault();
     if (!isFormValid) return console.log("Invalid meetup form");
 
+    const meetup = {
+      title: titleValue,
+      description: descValue,
+      address: addressRef.current.value,
+      image: imageRef.current.value,
+    }
+
+    const result = await fetch('/api/add-meetup', {
+      body: JSON.stringify(meetup),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    console.log(result)
+
+    // RESET INPUTS
     resetTitle();
     resetDesc();
+    addressRef.current.value = ''
+    imageRef.current.value = ''
   };
 
   useEffect(() => {
@@ -62,20 +84,23 @@ const AddMeetup = (props) => {
         {titleError && <small>{titleError}</small>}
       </label>
       <label>
+        <p>Where you want to meet:</p>
+        <input type="text" ref={addressRef} name="address" placeholder="Address" />
+      </label>
+      <label>
+        <p>URL of the image you want to use:</p>
+        <input name="image" ref={imageRef} placeholder="URL of image" ></input>
+      </label>
+      <label>
         <p>Describe your meetup:</p>
-        <input
+        <textarea
           onChange={setDescValue}
           onBlur={makeDescActive}
           value={descValue}
-          type="text"
           name="description"
           placeholder="Description"
         />
         {descError && <small>{descError}</small>}
-      </label>
-      <label>
-        <p>Where you want to meet:</p>
-        <input type="text" name="address" placeholder="Address" />
       </label>
       <button type="submit" className={(!isFormValid && classes.hidden) || ""}>
         Add Meetup

@@ -1,9 +1,11 @@
 .meetup {
-  width: 100%;
-  margin-top: 20px;
+  width: 90%;
+  margin-top: 25px;
   border-radius: 15px;
   box-shadow: 1px 1px 10px black;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .meetup > * {
@@ -15,9 +17,22 @@
   border-radius: 15px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  width: 100%;
 }
 
 .meetup > h2 {
   margin-bottom: 5px;
   color: rgb(19, 105, 105);
+}
+
+.meetup > a {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  color: rgb(19, 105, 105);
+  text-decoration: underline;
+}
+
+.meetup > a:hover {
+  text-decoration: none;
 }

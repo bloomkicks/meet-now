@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <header className={classes.header}>
       <div className={classes.header_content}>
-        <h2>Next Meetups</h2>
+        <Link href="/meetups" passHref><h2>Next Meetups</h2></Link>
         <nav>
           <Link href="/meetups">Meetups</Link>
           <Link href="/add-meetup">Add Meetup</Link>
