@@ -1,6 +1,11 @@
 {
-  "name": "next",
-  "private": true,
+  "name": "meet-now",
+  "private": false,
+  "license": "MIT",
+  "browserslist": [
+    "cover 99%",
+    "not dead"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

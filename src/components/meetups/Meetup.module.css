@@ -2,8 +2,8 @@
   width: 90%;
   margin-top: 25px;
   border-radius: 15px;
-  box-shadow: 1px 1px 10px black;
-  padding-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding-bottom: 35px;
   position: relative;
   z-index: 1;
 }
@@ -18,17 +18,25 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .meetup > h2 {
-  margin-bottom: 5px;
+  padding: 0 15px;
+  margin-bottom: 7.5px;
+  line-height: 1.25;
   color: rgb(19, 105, 105);
+}
+
+.meetup > address {
+  padding: 0 15px;
 }
 
 .meetup > a {
   position: absolute;
-  right: 15px;
-  bottom: 5px;
+  right: 28px;
+  bottom: 6px;
   color: rgb(19, 105, 105);
   text-decoration: underline;
 }

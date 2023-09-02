@@ -1,4 +1,4 @@
-import AddMeetup from "../src/components/add meetup/AddMeetup";
+import AddMeetup from "../components/add meetup/AddMeetup";
 
 const AddMeetupPage = props => {
   return (

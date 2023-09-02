@@ -1,0 +1,7 @@
+.details {
+  padding-bottom: 20px;
+}
+
+.details > p {
+  color: rgb(19, 105, 105);
+}
